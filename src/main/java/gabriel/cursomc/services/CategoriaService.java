@@ -15,12 +15,15 @@ public class CategoriaService {
 	@Autowired // AUTO INSTANCIAÇÃO
 	private CategoriaRepository repo;
 	
+	
 	public Categoria buscar(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
-		return obj.orElse(null);
-	}
+		return obj.orElseThrow(() -> new ObjectNotFoundExceptionG(
+		"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+		}
 	
-	public List<Categoria> listar() {
+
+	public List<Categoria> listar() {	
 		return repo.findAll();
 	}
 
