@@ -1,7 +1,5 @@
 package gabriel.cursomc.domain;
 
-import java.util.Date;
-
 import gabriel.cursomc.domain.enuns.EstadoPagamento;
 import jakarta.persistence.Entity;
 
